@@ -1,6 +1,4 @@
-import React, { useContext } from "react";
-import img1 from "../assets/1223468480.png";
-import { NewsContext } from "../context/NewsContextProvider";
+import React from "react";
 import Article from "../model/Article";
 import { Link } from "react-router-dom";
 interface NewsItemProps {

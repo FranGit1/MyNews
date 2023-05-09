@@ -4,7 +4,6 @@ import axios from "axios";
 import Article from "../model/Article";
 import NewsItem from "./NewsItem";
 import Navbar from "./Navbar";
-import Search from "./Search";
 
 interface SearchNewsProps {}
 
