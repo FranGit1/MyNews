@@ -1,0 +1,42 @@
+form {
+  background-color: #fff;
+  width: 70%;
+  height: 30%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10px;
+
+  .search-text {
+    display: flex;
+  }
+
+  input {
+    all: unset;
+    color: #000000;
+    padding: 6px 10px;
+    width: 100%;
+
+    &::placeholder {
+      color: #1d1d1b;
+      opacity: 0.7;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    background: #bb1e1e;
+    border-radius: 6px;
+    color: #fff;
+    padding: 8px 20px;
+    text-transform: uppercase;
+    border: none;
+  }
+
+  .icon-search {
+    height: 40%;
+    padding: 10px 5px;
+  }
+}

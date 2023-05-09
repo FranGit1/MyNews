@@ -1,0 +1,70 @@
+.offer-container {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+  background: linear-gradient(180deg, #bb1e1e 71.29%, #b21919 99.95%);
+  color: white;
+
+  .text-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1;
+    margin-right: 20px;
+
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h3 {
+      font-weight: bold;
+      margin-right: 16px;
+      font-size: 16px;
+      line-height: 21px;
+      letter-spacing: -0.136px;
+
+      color: #ffffff;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 0;
+
+    button {
+      margin: 10px 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #000000;
+      background-color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 20px;
+      margin-left: 12px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #bb1e1e;
+      }
+
+      &:last-child {
+        background-color: #bb1e1e;
+        text-transform: none;
+        color: #fff;
+
+        &:hover {
+          background-color: #d9d9d9;
+        }
+      }
+    }
+  }
+}
