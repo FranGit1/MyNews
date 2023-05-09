@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import homeIcon from "../assets/Property 2=Home.svg";
 import generalIcon from "../assets/Property 2=News.svg";
 import sportsIcon from "../assets/Property 2=Sports.svg";

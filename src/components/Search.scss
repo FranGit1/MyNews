@@ -1,6 +1,7 @@
 form {
   background-color: #fff;
   width: 70%;
+
   height: 30%;
   border-radius: 10px;
   display: flex;
@@ -11,12 +12,14 @@ form {
 
   .search-text {
     display: flex;
+    width: 100%;
   }
 
   input {
     all: unset;
     color: #000000;
     padding: 6px 10px;
+    flex: 1;
     width: 100%;
 
     &::placeholder {
@@ -38,5 +41,15 @@ form {
   .icon-search {
     height: 40%;
     padding: 10px 5px;
+  }
+
+  .srchButton {
+    cursor: pointer;
+    background: #bb1e1e;
+    border-radius: 6px;
+    color: #fff;
+    padding: 8px 20px;
+    text-transform: uppercase;
+    border: none;
   }
 }

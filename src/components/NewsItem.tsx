@@ -5,7 +5,7 @@ import Article from "../model/Article";
 import { Link } from "react-router-dom";
 interface NewsItemProps {
   article: Article | undefined;
-  category: String | undefined;
+  category?: String | undefined;
 }
 
 function getRandomCategory(): String {
