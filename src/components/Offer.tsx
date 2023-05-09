@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Offer.scss";
+import { OfferContext } from "../context/OfferContextProvider";
 
 export const Offer: React.FC = ({}) => {
+  const { showOffer, setShowOffer } = useContext(OfferContext);
+
+  const handleNoThanks = () => {
+    console.log("clicked");
+    setShowOffer(false);
+  };
+
+  if (!showOffer) {
+    return null;
+  }
   return (
     <div className="offer-container">
       <div className="text-container">
@@ -10,7 +21,7 @@ export const Offer: React.FC = ({}) => {
       </div>
       <div className="button-container">
         <button>GET</button>
-        <button>No, thanks</button>
+        <button onClick={handleNoThanks}>No, thanks</button>
       </div>
     </div>
   );

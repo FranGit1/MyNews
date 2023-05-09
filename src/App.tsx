@@ -10,22 +10,25 @@ import Health from "./components/Health";
 import Science from "./components/Science";
 import Sports from "./components/Sports";
 import Technology from "./components/Technology";
+import { OfferContextProvider } from "./context/OfferContextProvider";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="general" element={<General />} />
-        <Route path="business" element={<Business />} />
-        <Route path="health" element={<Health />} />
-        <Route path="science" element={<Science />} />
-        <Route path="sports" element={<Sports />} />
-        <Route path="technology" element={<Technology />} />
-      </Route>
-    </Routes>
+    <OfferContextProvider>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="general" element={<General />} />
+          <Route path="business" element={<Business />} />
+          <Route path="health" element={<Health />} />
+          <Route path="science" element={<Science />} />
+          <Route path="sports" element={<Sports />} />
+          <Route path="technology" element={<Technology />} />
+        </Route>
+      </Routes>
+    </OfferContextProvider>
   );
 }
 
