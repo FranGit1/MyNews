@@ -16,7 +16,7 @@ export const Home: React.FC<HomeProps> = ({}) => {
         <h3 className="text-lg font-semibold mt-5 mb-5 hidden md:block">
           News
         </h3>
-        <div className="flex justify-center py-4 font-semibold block md:hidden	">
+        <div className="flex justify-center py-4 font-semibold  md:hidden	">
           <Link
             to=""
             className={` py-3 px-5 cursor-pointer  ${
