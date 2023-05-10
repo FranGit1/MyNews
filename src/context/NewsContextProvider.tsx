@@ -20,7 +20,7 @@ export const NewsContextProvider: React.FC<NewsProviderProps> = ({
   category,
 }) => {
   const [articles, setArticle] = useState(undefined);
-  const apiKey = "534b4cc866c1451db7165e91a1b63483";
+  const apiKey = "3de15fadf5914c1e854ae1a52848f5f1";
 
   let url = `https://newsapi.org/v2/everything?q=america&sortBy=publishedAt&apiKey=${apiKey} `;
 

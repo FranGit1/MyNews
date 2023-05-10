@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./Search.scss";
 import searchIcon from "../assets/Search.png";
 
@@ -13,6 +13,7 @@ export const Search: React.FC<SearchProps> = ({}) => {
     e.preventDefault();
     const query = inputRef.current?.value;
     navigate(`/search/${query}`);
+    e.currentTarget.reset();
   };
 
   return (

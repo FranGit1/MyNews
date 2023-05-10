@@ -1,6 +1,8 @@
 import React from "react";
 import Article from "../model/Article";
 import { Link } from "react-router-dom";
+import defaultImage from "../assets/1253325646.svg";
+import fav from "../assets/pngwing.com.png";
 interface NewsItemProps {
   article: Article | undefined;
   category?: String | undefined;
@@ -10,7 +12,7 @@ function getRandomCategory(): String {
   const categories: String[] = [
     "sports",
     "general",
-    "politics",
+    "science",
     "technology",
     "health",
     "business",
@@ -24,18 +26,36 @@ export const NewsItem: React.FC<NewsItemProps> = ({ article, category }) => {
     category = getRandomCategory();
   }
   return (
-    <div className="bg-white shadow rounded-md h-full">
+    <div className="bg-white shadow rounded-md max-w-fit	 relative">
       <img
-        src={article?.urlToImage}
+        src={article?.urlToImage ? article?.urlToImage : defaultImage}
         alt=""
-        className="rounded-t-xl  h-40 w-96 object-cover"
+        className="rounded-t-xl h-40 w-96 object-cover"
       />
-      <div className="p-3">
-        <span className="text-sm font-semibold text-blue-500 uppercase">
-          <Link to={{ pathname: `/${category}` }}>{category}</Link>
-        </span>
-        <h3 className="font-bold mb-4 ">{article?.title}</h3>
-        <p className="mb-4 text-xs max-w-xs">{article?.author}</p>
+      {article?.urlToImage === null && (
+        <button className="absolute top-0 left-0 m-3 px-2 py-1 bg-darkRed text-white rounded-md">
+          Ad
+        </button>
+      )}
+      <div className="p-3 h-40 flex flex-col justify-between">
+        <div>
+          <span className="text-sm font-semibold text-blue-500 uppercase">
+            <Link to={{ pathname: `/${category}` }}>{category}</Link>
+          </span>
+          <h3 className="font-bold mb-1 line-clamp-2 max-w-xs hover:line-clamp-none transition-all duration-300 ease-in-out">
+            {article?.title}
+          </h3>
+        </div>
+        <div className="flex justify-between">
+          <p className="text-xs">
+            {article?.author
+              ? article?.author.substring(0, 21)
+              : "Justin Davenport"}
+          </p>
+          <button>
+            <img src={fav} alt="" />
+          </button>
+        </div>
       </div>
     </div>
   );
