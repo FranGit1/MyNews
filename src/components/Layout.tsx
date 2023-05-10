@@ -42,7 +42,7 @@ export const Layout: React.FC<LayoutProps> = ({}) => {
                 : "justify-between items-center "
             } w-full md:w-fit`}
           >
-            <h1 className="text-darkRed py-1 pr-10 font-extrabold	 text-3xl  md:mb-0 md:mr-5 mb-4 md:mb-0">
+            <h1 className="text-darkRed py-1 pr-10 font-extrabold	 text-3xl   md:mr-5 mb-4 md:mb-0">
               My<span className="text-gray-900">News</span>
             </h1>
             <div
