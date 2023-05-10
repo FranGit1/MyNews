@@ -1,6 +1,5 @@
 import React from "react";
 import { NewsContextProvider } from "../context/NewsContextProvider";
-import Navbar from "./Navbar";
 import NewsList from "./NewsList";
 
 interface GeneralProps {}
@@ -10,7 +9,7 @@ export const General: React.FC<GeneralProps> = ({}) => {
     <NewsContextProvider category="general">
       <div className="ime">
         <h3 className="text-lg font-semibold mt-5 mb-5">General</h3>
-        <div className="news ">
+        <div className="news">
           <NewsList category={"general"} />
         </div>
       </div>

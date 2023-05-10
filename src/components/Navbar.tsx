@@ -15,10 +15,10 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
   const { pathname } = useLocation();
-  const { menuOff, setMenuOn } = useContext(MenuContext);
+  const { setMenuOn } = useContext(MenuContext);
 
   const handleIconClick = (): void => {
-    setMenuOn(!menuOff);
+    setMenuOn(true);
   };
 
   return (
