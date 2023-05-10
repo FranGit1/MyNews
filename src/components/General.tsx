@@ -8,8 +8,6 @@ interface GeneralProps {}
 export const General: React.FC<GeneralProps> = ({}) => {
   return (
     <NewsContextProvider category="general">
-      <hr className="h-px my-8 bg-gray-300 border-0 " />
-
       <div className="ime">
         <h3 className="text-lg font-semibold mt-5 mb-5">General</h3>
         <div className="news ">

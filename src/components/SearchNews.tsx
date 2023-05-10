@@ -11,7 +11,7 @@ export const SearchNews: React.FC<SearchNewsProps> = ({}) => {
   const { pathname } = useLocation();
   const url = `https://newsapi.org/v2/everything?q=${pathname
     .split("/")
-    .pop()}&apiKey=3de15fadf5914c1e854ae1a52848f5f1`;
+    .pop()}&apiKey=d5a2d5e4c4874e988a97f96fda879bca`;
 
   const [articles, setArticle] = useState<Article[]>([]);
 

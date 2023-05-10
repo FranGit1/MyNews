@@ -1,14 +1,29 @@
-import React, { useContext } from "react";
-import { Outlet } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import { OfferContext } from "../context/OfferContextProvider";
 import Offer from "./Offer";
 import Search from "./Search";
 import Navbar from "./Navbar";
 import hamburger from "../assets/ham.svg";
+import { LatestNewsContext } from "../context/LatestNewsContextProvider";
 interface LayoutProps {}
 
 export const Layout: React.FC<LayoutProps> = ({}) => {
   const { showOffer } = useContext(OfferContext);
+  const { showLatest, setShowLatest } = useContext(LatestNewsContext);
+  const [featured, setFeatured] = useState(true);
+
+  const handleClickFeature = (): undefined => {
+    setFeatured(true);
+    setShowLatest(false);
+    return undefined;
+  };
+
+  const handleClickLatest = (): undefined => {
+    setShowLatest(true);
+    setFeatured(false);
+    return undefined;
+  };
 
   return (
     <main className="App">
@@ -28,11 +43,35 @@ export const Layout: React.FC<LayoutProps> = ({}) => {
           </div>
         </div>
 
-        <div className="flex mt-5 items-start justify-center md:justify-start">
+        <div className="flex mt-5 items-start justify-center md:justify-start ">
           <div className="hidden md:block">
             <Navbar />
           </div>
-          <Outlet />
+          <div className="flex-col">
+            <div className="flex justify-center py-4 font-semibold  md:hidden	">
+              <div
+                onClick={handleClickFeature}
+                className={` py-3 px-5 cursor-pointer  ${
+                  featured || !showLatest
+                    ? "bg-redTrans rounded-3xl text-darkRed"
+                    : ""
+                }`}
+              >
+                Featured
+              </div>
+              <div
+                onClick={handleClickLatest}
+                className={` py-3 px-5 cursor-pointer  ${
+                  showLatest ? "bg-redTrans rounded-3xl text-darkRed" : ""
+                }`}
+              >
+                Latest
+              </div>
+            </div>
+            <hr className="h-px my-8 bg-gray-300 border-0 hidden md:block" />
+
+            <Outlet />
+          </div>
         </div>
       </div>
     </main>

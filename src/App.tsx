@@ -10,22 +10,27 @@ import Sports from "./components/Sports";
 import Technology from "./components/Technology";
 import { OfferContextProvider } from "./context/OfferContextProvider";
 import SearchNews from "./components/SearchNews";
+import Latest from "./components/Latest";
+import LatestNewsContextProvider from "./context/LatestNewsContextProvider";
 
 function App() {
   return (
     <OfferContextProvider>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="general" element={<General />} />
-          <Route path="business" element={<Business />} />
-          <Route path="health" element={<Health />} />
-          <Route path="science" element={<Science />} />
-          <Route path="sports" element={<Sports />} />
-          <Route path="technology" element={<Technology />} />
-          <Route path="search/:query" element={<SearchNews />} />
-        </Route>
-      </Routes>
+      <LatestNewsContextProvider>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="general" element={<General />} />
+            <Route path="business" element={<Business />} />
+            <Route path="health" element={<Health />} />
+            <Route path="science" element={<Science />} />
+            <Route path="sports" element={<Sports />} />
+            <Route path="technology" element={<Technology />} />
+            <Route path="latest" element={<Latest />} />
+            <Route path="search/:query" element={<SearchNews />} />
+          </Route>
+        </Routes>
+      </LatestNewsContextProvider>
     </OfferContextProvider>
   );
 }

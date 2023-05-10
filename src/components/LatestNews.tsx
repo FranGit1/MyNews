@@ -13,7 +13,7 @@ export const LatestNews: React.FC<LatestNewsProps> = ({}) => {
   const [page, setPage] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(true);
 
-  const apiKey = "3de15fadf5914c1e854ae1a52848f5f1";
+  const apiKey = "d5a2d5e4c4874e988a97f96fda879bca";
   const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}&page=${page}`;
 
   const observer = useRef<IntersectionObserver | null>(null);
@@ -56,14 +56,14 @@ export const LatestNews: React.FC<LatestNewsProps> = ({}) => {
         <img src={topList} alt="" className="pr-5" />
         <h4>Latest News</h4>
       </div>
-      <div className="h-96  overflow-y-auto pt-4 flex-grow">
+      <div className="h-96  overflow-y-auto scrollbar-none pt-4 flex-grow">
         {articles.map((article, index) => {
           return <LatestNewsItem article={article} key={index} />;
         })}
         <div className="scroll-anchor" />
         {loading && <p>Loading...</p>}
       </div>
-      <Link to="" className="flex">
+      <Link to="/latest" className="flex">
         <span className="text-sm font-semibold text-blue-500 p-2">
           See all news
         </span>
