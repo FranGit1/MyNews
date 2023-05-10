@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 
 import { NewsContextProvider } from "../context/NewsContextProvider";
 import NewsList from "./NewsList";
-import { useLocation } from "react-router-dom";
-import { LatestNewsContext } from "../context/LatestNewsContextProvider";
+
 interface HomeProps {}
 
 export const Home: React.FC<HomeProps> = ({}) => {

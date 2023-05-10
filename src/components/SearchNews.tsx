@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import axios from "axios";
 import Article from "../model/Article";
 import NewsItem from "./NewsItem";
-import Navbar from "./Navbar";
 
 interface SearchNewsProps {}
 

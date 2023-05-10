@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import homeIcon from "../assets/Property 2=Home.svg";
 import generalIcon from "../assets/Property 2=News.svg";
 import sportsIcon from "../assets/Property 2=Sports.svg";
@@ -7,15 +7,32 @@ import businessIcon from "../assets/Property 2=Netguide.svg";
 import healthIcon from "../assets/Property 2=Health.svg";
 import technologyhIcon from "../assets/Property 2=TV Guide.svg";
 import { Link, useLocation } from "react-router-dom";
+import { MenuContext } from "../context/MenuContextProvider";
 
-export const Navbar: React.FC = ({}) => {
+interface NavbarProps {
+  direction: boolean;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
   const { pathname } = useLocation();
+  const { menuOff, setMenuOn } = useContext(MenuContext);
+
+  const handleIconClick = (): void => {
+    setMenuOn(!menuOff);
+  };
 
   return (
-    <div className="inline-flex justify-center items-center flex-col  space-y-4 mt-7">
+    <div
+      className={`${
+        direction
+          ? "inline-flex justify-center items-center flex-col space-y-4 mt-7"
+          : "grid grid-cols-3 gap-4 justify-center mt-7"
+      }  `}
+    >
       <Link
         to="/"
         className="flex flex-col items-center  px-3 py-2  rounded-lg hover:bg-white group"
+        onClick={handleIconClick}
       >
         <img src={homeIcon} alt="" className="w-8 h-6" />
         <span
@@ -29,6 +46,7 @@ export const Navbar: React.FC = ({}) => {
       <Link
         to="/general"
         className="flex flex-col items-center  px-3 py-2  rounded-lg hover:bg-white group "
+        onClick={handleIconClick}
       >
         <img src={generalIcon} alt="" className="w-8 h-6" />
         <span
@@ -42,6 +60,7 @@ export const Navbar: React.FC = ({}) => {
       <Link
         to="/business"
         className="flex flex-col items-center px-3 py-2  rounded-lg hover:bg-white group"
+        onClick={handleIconClick}
       >
         <img src={businessIcon} alt="" className="w-8 h-6" />
         <span
@@ -55,6 +74,7 @@ export const Navbar: React.FC = ({}) => {
       <Link
         to="/health"
         className="flex flex-col items-center px-3 py-2  rounded-lg hover:bg-white group"
+        onClick={handleIconClick}
       >
         <img src={healthIcon} alt="" className="w-8 h-6" />
         <span
@@ -68,6 +88,7 @@ export const Navbar: React.FC = ({}) => {
       <Link
         to="/science"
         className="flex flex-col items-center px-3 py-2  rounded-lg hover:bg-white group"
+        onClick={handleIconClick}
       >
         <img src={scienceIcon} alt="" className="w-8 h-6" />
         <span
@@ -81,6 +102,7 @@ export const Navbar: React.FC = ({}) => {
       <Link
         to="/sports"
         className="flex flex-col items-center px-3 py-2  rounded-lg hover:bg-white group"
+        onClick={handleIconClick}
       >
         <img src={sportsIcon} alt="" className="w-8 h-6" />
         <span
@@ -94,6 +116,7 @@ export const Navbar: React.FC = ({}) => {
       <Link
         to="/technology"
         className="flex flex-col items-center px-3 py-2  rounded-lg hover:bg-white group"
+        onClick={handleIconClick}
       >
         <img src={technologyhIcon} alt="" className="w-8 h-6" />
         <span
