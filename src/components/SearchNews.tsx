@@ -8,6 +8,7 @@ interface SearchNewsProps {}
 
 export const SearchNews: React.FC<SearchNewsProps> = ({}) => {
   const { pathname } = useLocation();
+
   const url = `https://newsapi.org/v2/everything?q=${pathname
     .split("/")
     .pop()}&apiKey=d5a2d5e4c4874e988a97f96fda879bca`;

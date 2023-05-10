@@ -1,19 +1,22 @@
-import React, { useRef } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useContext, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Search.scss";
 import searchIcon from "../assets/Search.png";
+import { MenuContext } from "../context/MenuContextProvider";
 
 interface SearchProps {}
 
 export const Search: React.FC<SearchProps> = ({}) => {
   const navigate = useNavigate();
   const inputRef = useRef<HTMLInputElement>(null);
+  const { setMenuOn } = useContext(MenuContext);
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const query = inputRef.current?.value;
     navigate(`/search/${query}`);
-    e.currentTarget.reset();
+    // e.currentTarget.reset();
+    setMenuOn(true);
   };
 
   return (

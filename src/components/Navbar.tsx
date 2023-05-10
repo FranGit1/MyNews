@@ -25,7 +25,7 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
     <div
       className={`${
         direction
-          ? "inline-flex justify-center items-center flex-col space-y-4 mt-7"
+          ? "inline-flex justify-center items-center flex-col space-y-4 mt-14"
           : "grid grid-cols-3 gap-4 justify-center mt-7"
       }  `}
     >

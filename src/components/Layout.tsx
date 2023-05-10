@@ -34,13 +34,15 @@ export const Layout: React.FC<LayoutProps> = ({}) => {
     <main className="App">
       <div className="hidden md:block">{showOffer && <Offer />}</div>
       <div className="mt-10 px-5 md:px-[10%]  ">
-        <div className="home-container mx-auto md:ml-10 flex flex-col items-center md:flex-row md:items-center">
+        <div className="home-container mx-auto md:ml-10 flex flex-col   items-center md:flex-row md:items-center">
           <div
             className={`flex ${
-              !menuOff ? "flex-col-reverse items-center" : "justify-between"
+              !menuOff
+                ? "flex-col-reverse items-center"
+                : "justify-between items-center "
             } w-full md:w-fit`}
           >
-            <h1 className="text-red-500 py-1 pr-10 font-bold text-3xl mb-5 md:mb-0 md:mr-5">
+            <h1 className="text-darkRed py-1 pr-10 font-extrabold	 text-3xl  md:mb-0 md:mr-5 mb-4 md:mb-0">
               My<span className="text-gray-900">News</span>
             </h1>
             <div
@@ -51,7 +53,10 @@ export const Layout: React.FC<LayoutProps> = ({}) => {
               <div className={` ${!menuOff ? " invisible" : "hidden"}`}>
                 place
               </div>
-              <button onClick={handleClickMenu} className="block   md:hidden ">
+              <button
+                onClick={handleClickMenu}
+                className="block mb-4 md:mb-0  md:hidden "
+              >
                 <img
                   src={menuOff ? hamburger : exitHamburger}
                   className={` ${!menuOff ? "mb-10" : ""}`}
