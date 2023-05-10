@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Article from "../model/Article";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import defaultImage from "../assets/1253325646.svg";
 import fav from "../assets/pngwing.com.png";
+import remove from "../assets/remove.svg";
+import { toast } from "react-toastify";
+
 interface NewsItemProps {
   article: Article | undefined;
-  category?: String | undefined;
+  category?: string | undefined;
+  handleRemove?: Function;
 }
 
-function getRandomCategory(): String {
-  const categories: String[] = [
+function getRandomCategory(): string {
+  const categories: string[] = [
     "sports",
     "general",
     "science",
@@ -21,12 +25,40 @@ function getRandomCategory(): String {
   return categories[randomIndex];
 }
 
-export const NewsItem: React.FC<NewsItemProps> = ({ article, category }) => {
+export const NewsItem: React.FC<NewsItemProps> = ({
+  article,
+  category,
+  handleRemove,
+}) => {
   if (typeof category === "undefined") {
     category = getRandomCategory();
   }
+
+  const { pathname } = useLocation();
+  const isFavoritesPage = pathname === "/favourite";
+  const [isSaved, setIsSaved] = useState(false);
+
+  const handleSave = (): void => {
+    console.log(pathname);
+
+    let savedArticles = JSON.parse(
+      localStorage.getItem("savedArticles") || "[]"
+    );
+    savedArticles.push(article);
+    localStorage.setItem("savedArticles", JSON.stringify(savedArticles));
+    setIsSaved(true);
+    toast.success("Article saved as favorite!", { autoClose: 2000 });
+  };
+
+  const handleRemoveClick = (): void => {
+    if (handleRemove) {
+      handleRemove(article);
+      toast.success("Article removed from favorites!", { autoClose: 2000 });
+    }
+  };
+
   return (
-    <div className="bg-white shadow rounded-md max-w-fit	 relative">
+    <div className="bg-white shadow rounded-md max-w-fit relative">
       <img
         src={article?.urlToImage ? article?.urlToImage : defaultImage}
         alt=""
@@ -46,15 +78,21 @@ export const NewsItem: React.FC<NewsItemProps> = ({ article, category }) => {
             {article?.title}
           </h3>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between  ">
           <p className="text-xs">
             {article?.author
               ? article?.author.substring(0, 21)
               : "Justin Davenport"}
           </p>
-          <button>
-            <img src={fav} alt="" />
-          </button>
+          {isFavoritesPage ? (
+            <button onClick={handleRemoveClick}>
+              <img src={remove} alt="Remove from favorites" />
+            </button>
+          ) : (
+            <button onClick={handleSave}>
+              <img src={fav} alt="Add to favorites" />
+            </button>
+          )}
         </div>
       </div>
     </div>

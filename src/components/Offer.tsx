@@ -6,7 +6,6 @@ export const Offer: React.FC = ({}) => {
   const { showOffer, setShowOffer } = useContext(OfferContext);
 
   const handleNoThanks = () => {
-    console.log("clicked");
     setShowOffer(false);
   };
 

@@ -13,12 +13,17 @@ import SearchNews from "./components/SearchNews";
 import Latest from "./components/Latest";
 import LatestNewsContextProvider from "./context/LatestNewsContextProvider";
 import MenuContextProvider from "./context/MenuContextProvider";
+import FavouriteArticles from "./components/FavouriteArticles";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <OfferContextProvider>
       <LatestNewsContextProvider>
         <MenuContextProvider>
+          <ToastContainer />
+
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route path="/" element={<Home />} />
@@ -29,6 +34,7 @@ function App() {
               <Route path="sports" element={<Sports />} />
               <Route path="technology" element={<Technology />} />
               <Route path="latest" element={<Latest />} />
+              <Route path="favourite" element={<FavouriteArticles />} />
               <Route path="search/:query" element={<SearchNews />} />
             </Route>
           </Routes>

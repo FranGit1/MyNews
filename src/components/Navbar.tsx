@@ -3,7 +3,8 @@ import homeIcon from "../assets/Property 2=Home.svg";
 import generalIcon from "../assets/Property 2=News.svg";
 import sportsIcon from "../assets/Property 2=Sports.svg";
 import scienceIcon from "../assets/Property 2=Science.svg";
-import businessIcon from "../assets/Property 2=Netguide.svg";
+import businessIcon from "../assets/Property 2=Business.svg";
+import bookmarkIcon from "../assets/Property 2=Netguide.svg";
 import healthIcon from "../assets/Property 2=Health.svg";
 import technologyhIcon from "../assets/Property 2=TV Guide.svg";
 import { Link, useLocation } from "react-router-dom";
@@ -125,6 +126,20 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
           }`}
         >
           Technology
+        </span>
+      </Link>
+      <Link
+        to="/favourite"
+        className="flex flex-col items-center px-3 py-2  rounded-lg hover:bg-white group"
+        onClick={handleIconClick}
+      >
+        <img src={bookmarkIcon} alt="" className="w-8 h-6" />
+        <span
+          className={`mt-2 text-sm font-semibold	text-grey group-hover:text-darkRed ${
+            pathname === "/favourite" ? "text-darkRed" : "text-gray"
+          }`}
+        >
+          Favourites
         </span>
       </Link>
     </div>

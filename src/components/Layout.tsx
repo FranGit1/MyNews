@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { OfferContext } from "../context/OfferContextProvider";
 import Offer from "./Offer";
 import Search from "./Search";
@@ -15,6 +15,7 @@ export const Layout: React.FC<LayoutProps> = ({}) => {
   const { showLatest, setShowLatest } = useContext(LatestNewsContext);
   const [featured, setFeatured] = useState(true);
   const { menuOff, setMenuOn } = useContext(MenuContext);
+  const { pathname } = useLocation();
 
   const handleClickFeature = (): void => {
     setFeatured(true);
@@ -79,26 +80,28 @@ export const Layout: React.FC<LayoutProps> = ({}) => {
               <Navbar direction={true} />
             </div>
             <div className="flex-col">
-              <div className="flex justify-center py-4 font-semibold  md:hidden	">
-                <div
-                  onClick={handleClickFeature}
-                  className={` py-3 px-5 cursor-pointer  ${
-                    featured || !showLatest
-                      ? "bg-redTrans rounded-3xl text-darkRed"
-                      : ""
-                  }`}
-                >
-                  Featured
+              {pathname !== "/favourite" && (
+                <div className="flex justify-center py-4 font-semibold  md:hidden	">
+                  <div
+                    onClick={handleClickFeature}
+                    className={` py-3 px-5 cursor-pointer  ${
+                      featured || !showLatest
+                        ? "bg-redTrans rounded-3xl text-darkRed"
+                        : ""
+                    }`}
+                  >
+                    Featured
+                  </div>
+                  <div
+                    onClick={handleClickLatest}
+                    className={` py-3 px-5 cursor-pointer  ${
+                      showLatest ? "bg-redTrans rounded-3xl text-darkRed" : ""
+                    }`}
+                  >
+                    Latest
+                  </div>
                 </div>
-                <div
-                  onClick={handleClickLatest}
-                  className={` py-3 px-5 cursor-pointer  ${
-                    showLatest ? "bg-redTrans rounded-3xl text-darkRed" : ""
-                  }`}
-                >
-                  Latest
-                </div>
-              </div>
+              )}
               <hr className="h-px my-8 bg-gray-300 border-0 hidden md:block" />
 
               <Outlet />
