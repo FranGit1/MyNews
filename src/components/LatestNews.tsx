@@ -52,11 +52,11 @@ export const LatestNews: React.FC<LatestNewsProps> = ({}) => {
 
   return (
     <div className="bg-white shadow rounded-md h-full flex flex-col">
-      <div className="flex pt-4 pb-1 pl-2">
-        <img src={topList} alt="" className="pr-5" />
-        <h4>Latest News</h4>
+      <div className="flex pt-4  pl-4">
+        <img src={topList} alt="" className="pr-3" />
+        <h4 className="font-semibold">Latest news</h4>
       </div>
-      <div className="h-96  overflow-y-auto scrollbar-none pt-4 flex-grow">
+      <div className="h-96  overflow-y-auto scrollbar-none pl-2 flex-grow">
         {articles.map((article, index) => {
           return <LatestNewsItem article={article} key={index} />;
         })}
@@ -64,7 +64,7 @@ export const LatestNews: React.FC<LatestNewsProps> = ({}) => {
         {loading && <p>Loading...</p>}
       </div>
       <Link to="/latest" className="flex">
-        <span className="text-sm font-semibold text-blue-500 p-2">
+        <span className="text-sm font-medium text-blue-500 p-2">
           See all news
         </span>
         <img src={arrow} alt="" />

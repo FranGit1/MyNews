@@ -68,7 +68,7 @@ export const Layout: React.FC<LayoutProps> = ({}) => {
           <div
             className={` ${
               !menuOff ? "mt-10 w-full md:w-auto" : "w-full md:w-auto"
-            }`}
+            } md:grow md:mr-44 `}
           >
             <Search />
           </div>
@@ -79,7 +79,7 @@ export const Layout: React.FC<LayoutProps> = ({}) => {
             <div className="hidden md:block">
               <Navbar direction={true} />
             </div>
-            <div className="flex-col">
+            <div className="flex-col text-myBlack">
               {pathname !== "/favourite" && pathname !== "/latest" && (
                 <div className="flex justify-center py-4 font-semibold  md:hidden	">
                   <div

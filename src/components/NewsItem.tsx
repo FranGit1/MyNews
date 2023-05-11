@@ -79,7 +79,7 @@ export const NewsItem: React.FC<NewsItemProps> = ({
           </h3>
         </div>
         <div className="flex justify-between  ">
-          <p className="text-xs">
+          <p className="text-xs hidden md:block">
             {article?.author
               ? article?.author.substring(0, 21)
               : "Justin Davenport"}

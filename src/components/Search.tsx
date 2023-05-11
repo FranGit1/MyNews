@@ -20,7 +20,7 @@ export const Search: React.FC<SearchProps> = ({}) => {
   };
 
   return (
-    <form id="form" role="search" onSubmit={handleSearch}>
+    <form id="form" role="search" onSubmit={handleSearch} className="	">
       <div className="search-text">
         <img className="icon-search" src={searchIcon} alt="search icon" />
         <input

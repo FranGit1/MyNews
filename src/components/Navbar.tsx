@@ -40,9 +40,17 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
     >
       <Link
         to="/"
-        className={`flex flex-col items-center  px-3 py-2  rounded-md ${
-          pathname === "/" ? "bg-white" : ""
-        } hover:bg-white group min-w-fit md:w-24`}
+        className={`flex flex-col items-center  px-3 py-2  rounded-md text-grey ${
+          pathname === "/" ? "bg-white shadow-lg md:shadow-none" : ""
+        } hover:bg-white group min-w-fit md:w-24
+        
+        
+        
+        
+        
+        
+        
+        `}
         onClick={handleIconClick}
       >
         <img
@@ -51,8 +59,8 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
           className="w-8 h-6 "
         />
         <span
-          className={`mt-2 text-sm font-semibold text-grey ${
-            pathname === "/" ? "text-darkRed" : ""
+          className={`mt-2 text-sm font-semibold  ${
+            pathname === "/" ? "text-darkRed " : ""
           } group-hover:text-darkRed`}
         >
           Home
@@ -60,8 +68,8 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
       </Link>
       <Link
         to="/general"
-        className={`flex flex-col items-center  px-3 py-2  rounded-md ${
-          pathname === "/general" ? "bg-white" : ""
+        className={`flex flex-col items-center  px-3 py-2  rounded-md text-grey ${
+          pathname === "/general" ? "bg-white  shadow-lg md:shadow-none" : ""
         } hover:bg-white group  min-w-fit md:w-24 `}
         onClick={handleIconClick}
       >
@@ -71,7 +79,7 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
           className="w-8 h-6 "
         />
         <span
-          className={`mt-2 text-sm font-semibold text-grey ${
+          className={`mt-2 text-sm font-semibold  ${
             pathname === "/general" ? "text-darkRed" : ""
           } group-hover:text-darkRed`}
         >
@@ -80,8 +88,8 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
       </Link>
       <Link
         to="/business"
-        className={`flex flex-col items-center  px-3 py-2  rounded-md ${
-          pathname === "/business" ? "bg-white" : ""
+        className={`flex flex-col items-center  px-3 py-2  rounded-md text-grey ${
+          pathname === "/business" ? "bg-white  shadow-lg md:shadow-none" : ""
         } hover:bg-white group   min-w-fit md:w-24`}
         onClick={handleIconClick}
       >
@@ -91,7 +99,7 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
           className="w-8 h-6 "
         />
         <span
-          className={`mt-2 text-sm font-semibold text-grey ${
+          className={`mt-2 text-sm font-semibold  ${
             pathname === "/business" ? "text-darkRed" : ""
           } group-hover:text-darkRed`}
         >
@@ -100,8 +108,8 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
       </Link>
       <Link
         to="/health"
-        className={`flex flex-col items-center  px-3 py-2  rounded-md ${
-          pathname === "/health" ? "bg-white" : ""
+        className={`flex flex-col items-center  px-3 py-2  rounded-md text-grey  ${
+          pathname === "/health" ? "bg-white  shadow-lg md:shadow-none" : ""
         } hover:bg-white group   min-w-fit md:w-24`}
         onClick={handleIconClick}
       >
@@ -111,7 +119,7 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
           className="w-8 h-6 "
         />
         <span
-          className={`mt-2 text-sm font-semibold text-grey ${
+          className={`mt-2 text-sm font-semibold ${
             pathname === "/health" ? "text-darkRed" : ""
           } group-hover:text-darkRed`}
         >
@@ -120,8 +128,8 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
       </Link>
       <Link
         to="/science"
-        className={`flex flex-col items-center  px-3 py-2  rounded-md ${
-          pathname === "/science" ? "bg-white" : ""
+        className={`flex flex-col items-center  px-3 py-2  rounded-md text-grey ${
+          pathname === "/science" ? "bg-white  shadow-lg md:shadow-none" : ""
         } hover:bg-white group   min-w-fit md:w-24`}
         onClick={handleIconClick}
       >
@@ -131,7 +139,7 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
           className="w-8 h-6 "
         />
         <span
-          className={`mt-2 text-sm font-semibold text-grey ${
+          className={`mt-2 text-sm font-semibold  ${
             pathname === "/science" ? "text-darkRed" : ""
           } group-hover:text-darkRed`}
         >
@@ -140,8 +148,8 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
       </Link>
       <Link
         to="/sports"
-        className={`flex flex-col items-center  px-3 py-2   rounded-md ${
-          pathname === "/sports" ? "bg-white" : ""
+        className={`flex flex-col items-center  px-3 py-2   rounded-md text-grey ${
+          pathname === "/sports" ? "bg-white  shadow-lg md:shadow-none" : ""
         } hover:bg-white group   min-w-fit md:w-24`}
         onClick={handleIconClick}
       >
@@ -151,7 +159,7 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
           className="w-8 h-6 "
         />
         <span
-          className={`mt-2 text-sm font-semibold text-grey ${
+          className={`mt-2 text-sm font-semibold  ${
             pathname === "/sports" ? "text-darkRed" : ""
           } group-hover:text-darkRed`}
         >
@@ -160,8 +168,8 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
       </Link>
       <Link
         to="/technology"
-        className={`flex flex-col items-center  px-3 py-2   rounded-md ${
-          pathname === "/technology" ? "bg-white" : ""
+        className={`flex flex-col items-center  px-3 py-2 rounded-md text-grey ${
+          pathname === "/technology" ? "bg-white  shadow-lg md:shadow-none" : ""
         } hover:bg-white group   min-w-fit md:w-24`}
         onClick={handleIconClick}
       >
@@ -173,7 +181,7 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
           className="w-8 h-6 "
         />
         <span
-          className={`mt-2 text-sm font-semibold text-grey ${
+          className={`mt-2 text-sm font-semibold  ${
             pathname === "/technology" ? "text-darkRed" : ""
           } group-hover:text-darkRed`}
         >
@@ -182,8 +190,8 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
       </Link>
       <Link
         to="/favourite"
-        className={`flex flex-col items-center  px-3 py-2  rounded-md ${
-          pathname === "/favourite" ? "bg-white" : ""
+        className={`flex flex-col items-center  px-3 py-2 rounded-md text-grey ${
+          pathname === "/favourite" ? "bg-white  shadow-lg md:shadow-none" : ""
         } hover:bg-white group   min-w-fit md:w-24`}
         onClick={handleIconClick}
       >
@@ -193,7 +201,7 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
           className="w-8 h-6 "
         />
         <span
-          className={`mt-2 text-sm font-semibold text-grey ${
+          className={`mt-2 text-sm font-semibold  ${
             pathname === "/favourite" ? "text-darkRed" : ""
           } group-hover:text-darkRed`}
         >
