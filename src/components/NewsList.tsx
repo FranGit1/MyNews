@@ -4,6 +4,7 @@ import NewsItem from "./NewsItem";
 import LatestNews from "./LatestNews";
 import { useLocation } from "react-router-dom";
 import { LatestNewsContext } from "../context/LatestNewsContextProvider";
+import BreakingNews from "./BreakingNews";
 
 interface NewsListProps {
   category?: string;
@@ -44,6 +45,14 @@ export const NewsList: React.FC<NewsListProps> = ({ category }) => {
               return (
                 <div className="row-span-2 hidden md:block" key={index}>
                   <LatestNews />
+                </div>
+              );
+            }
+
+            if (index == 4 && pathname === "/") {
+              return (
+                <div className=" hidden md:block" key={index}>
+                  <BreakingNews article={article} />
                 </div>
               );
             }
