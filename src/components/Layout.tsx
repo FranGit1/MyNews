@@ -34,7 +34,7 @@ export const Layout: React.FC<LayoutProps> = ({}) => {
   return (
     <main className="App">
       <div className="hidden md:block">{showOffer && <Offer />}</div>
-      <div className="mt-10 px-5 md:px-[10%]  ">
+      <div className="mt-10 px-5 md:px-[15%]  ">
         <div className="home-container mx-auto md:ml-10 flex flex-col   items-center md:flex-row md:items-center">
           <div
             className={`flex ${
@@ -80,7 +80,7 @@ export const Layout: React.FC<LayoutProps> = ({}) => {
               <Navbar direction={true} />
             </div>
             <div className="flex-col">
-              {pathname !== "/favourite" && (
+              {pathname !== "/favourite" && pathname !== "/latest" && (
                 <div className="flex justify-center py-4 font-semibold  md:hidden	">
                   <div
                     onClick={handleClickFeature}
@@ -102,7 +102,7 @@ export const Layout: React.FC<LayoutProps> = ({}) => {
                   </div>
                 </div>
               )}
-              <hr className="h-px my-8 bg-gray-300 border-0 hidden md:block" />
+              <hr className="h-px my-8 bg-gray-200 border-0 hidden md:block" />
 
               <Outlet />
             </div>

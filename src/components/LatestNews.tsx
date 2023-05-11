@@ -13,7 +13,7 @@ export const LatestNews: React.FC<LatestNewsProps> = ({}) => {
   const [page, setPage] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(true);
 
-  const apiKey = "534b4cc866c1451db7165e91a1b63483";
+  const apiKey = "60a02aefd26a4cac8b123e78ebc499bf";
   const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}&page=${page}`;
 
   const observer = useRef<IntersectionObserver | null>(null);

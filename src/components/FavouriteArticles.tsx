@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Article from "../model/Article";
 import NewsItem from "./NewsItem";
-import { toast } from "react-toastify";
 
 interface FavouriteArticlesProps {}
 

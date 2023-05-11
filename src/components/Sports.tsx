@@ -1,6 +1,5 @@
 import React from "react";
 import { NewsContextProvider } from "../context/NewsContextProvider";
-import Navbar from "./Navbar";
 import NewsList from "./NewsList";
 
 interface SportsProps {}

@@ -16,6 +16,7 @@ import MenuContextProvider from "./context/MenuContextProvider";
 import FavouriteArticles from "./components/FavouriteArticles";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { NewsContextProvider } from "./context/NewsContextProvider";
 
 function App() {
   return (
@@ -33,7 +34,15 @@ function App() {
               <Route path="science" element={<Science />} />
               <Route path="sports" element={<Sports />} />
               <Route path="technology" element={<Technology />} />
-              <Route path="latest" element={<Latest />} />
+              <Route
+                path="latest"
+                element={
+                  <NewsContextProvider>
+                    <Latest />
+                  </NewsContextProvider>
+                }
+              />
+
               <Route path="favourite" element={<FavouriteArticles />} />
               <Route path="search/:query" element={<SearchNews />} />
             </Route>

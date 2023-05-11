@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 import { LatestNewsContext } from "../context/LatestNewsContextProvider";
 
 interface NewsListProps {
-  category?: String;
+  category?: string;
 }
 
 export const NewsList: React.FC<NewsListProps> = ({ category }) => {

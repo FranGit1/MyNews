@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10%;
+  padding: 0 15%;
   background: linear-gradient(180deg, #bb1e1e 71.29%, #b21919 99.95%);
   color: white;
 
@@ -21,7 +21,7 @@
 
     h3 {
       font-weight: bold;
-      margin-right: 16px;
+      margin-right: 26px;
       font-size: 16px;
       line-height: 21px;
       letter-spacing: -0.136px;
@@ -54,6 +54,9 @@
 
       &:hover {
         background-color: #bb1e1e;
+        color: #fff;
+
+        transition: background-color 0.2s ease-in-out;
       }
 
       &:last-child {
@@ -62,7 +65,9 @@
         color: #fff;
 
         &:hover {
-          background-color: #d9d9d9;
+          background-color: #fff;
+          color: #000000;
+          transition: background-color 0.2s ease-in-out;
         }
       }
     }
