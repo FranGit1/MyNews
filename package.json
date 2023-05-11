@@ -10,7 +10,10 @@
     "preview": "vite preview",
     "start": "vite"
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> ea8e637c5768db41434e490fd839b632a9ab572c
   },
   "dependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
