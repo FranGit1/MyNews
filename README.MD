@@ -1,6 +1,6 @@
 Design Decisions
 
-Packages should be install with npm installed --dev because of tailwind, vite and other dependencies required to run app in development.
+App has been designed to be run with npm install and npm start commands only, without the need for global packages.
 
 For MyNews web app, I used React and TypeScript for the most part in places where i thougt types would be usefull.
 I also chose to use Vite as the build tool, as it provides a fast and efficient development environment.
