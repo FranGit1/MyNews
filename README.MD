@@ -1,4 +1,12 @@
-Nema posebnih uputa za pokretanje. 
-Widget sa latest news je malo ograničen što se tiče infinit scrolanja jer api ima ograničenje za broj vijesti koje mogu fetchat bez plačanja premiuma.
-Za pohranu favourite postova odabra sam local storage od browsera kako bi postovi ostali i nakon realoadanja stranice. Kod dohvata svih vijesti na početnoj stranici
-api ne daje kategoriju vijesti pa sam to sam generirao, dok kod dohvata po kategorijama api daje i kategoriju.
+Design Decisions
+For MyNews web app, I used React and TypeScript for the most part in places where i thougt types would be usefull.
+I also chose to use Vite as the build tool, as it provides a fast and efficient development environment.
+
+In terms of styling, I used TailwindCSS and WindiCSS plugins which allowed me to quickly prototype and develop the user interface of the application.
+
+There are no special instructions for starting it.
+The latest news widget is a bit limited as far as infinite scrolling is concerned because the api has a limit on the number of news that can be fetched without paying a premium.
+To store favorite posts, I chose local storage from the browser, so that the posts will remain even after the page is reloaded.
+When retrieving all news on the home page, the api does not give the news category, so I generated it myself, while when retrieving by category, the api gives the category.
+
+For data retrieval, I used the Axios library to fetch data from a third-party news api.
