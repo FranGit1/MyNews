@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
-import { NewsContext } from "../context/NewsContextProvider";
+import React, { useEffect, useState } from "react";
 import NewsItem from "./NewsItem";
 import axios from "axios";
 import Article from "../model/Article";
