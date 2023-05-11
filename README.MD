@@ -1,6 +1,6 @@
 Design Decisions
 
-Packages should be install with npm install --dev because of tailwind, vite and other dependencies required to run app in development.
+Packages should be install with npm installed --dev because of tailwind, vite and other dependencies required to run app in development.
 
 For MyNews web app, I used React and TypeScript for the most part in places where i thougt types would be usefull.
 I also chose to use Vite as the build tool, as it provides a fast and efficient development environment.
